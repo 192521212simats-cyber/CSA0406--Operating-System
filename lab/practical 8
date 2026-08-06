@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main()
+{
+    int bt[3]={5,4,3};
+    int tq=2,i;
+
+    printf("Time Quantum = %d\n",tq);
+
+    for(i=0;i<3;i++)
+        printf("P%d -> %d\n",i+1,bt[i]);
+
+    return 0;
+}
