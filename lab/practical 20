@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    int i;
+
+    printf("Reader is Reading...\n");
+
+    for(i=1;i<=3;i++)
+        printf("Data %d Read\n",i);
+
+    printf("\nWriter is Writing...\n");
+
+    printf("Data Written Successfully\n");
+
+    return 0;
+}
