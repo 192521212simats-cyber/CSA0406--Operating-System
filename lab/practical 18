@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    int i,n;
+
+    printf("Enter number of items: ");
+    scanf("%d",&n);
+
+    for(i=1;i<=n;i++)
+    {
+        printf("Producer Produced Item %d\n",i);
+        printf("Consumer Consumed Item %d\n",i);
+    }
+
+    return 0;
+}
