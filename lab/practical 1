@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<unistd.h>
+
+int main()
+{
+    fork();
+
+    printf("PID = %d\n", getpid());
+    printf("Parent PID = %d\n", getppid());
+
+    return 0;
+}
