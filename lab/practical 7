@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main()
+{
+    int bt[5]={6,2,5,1,4};
+    int i,j,t;
+
+    for(i=0;i<5;i++)
+        for(j=i+1;j<5;j++)
+            if(bt[i]>bt[j])
+            {
+                t=bt[i];
+                bt[i]=bt[j];
+                bt[j]=t;
+            }
+
+    printf("Order:\n");
+    for(i=0;i<5;i++)
+        printf("%d ",bt[i]);
+
+    return 0;
+}
