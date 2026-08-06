@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<sys/ipc.h>
+#include<sys/shm.h>
+
+int main()
+{
+    int id;
+
+    id=shmget(1234,1024,0666|IPC_CREAT);
+
+    printf("Shared Memory ID = %d",id);
+
+    return 0;
+}
