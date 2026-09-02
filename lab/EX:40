@@ -1,0 +1,5 @@
+-rwxr-xr--
+ls -l
+chmod 755 file.txt
+chmod u+x file.txt
+chmod g+w file.txt
