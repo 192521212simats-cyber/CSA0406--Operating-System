@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+    int indexBlock[50];
+    int data[50];
+    int n, i, block;
+
+    printf("Enter number of file blocks: ");
+    scanf("%d", &n);
+
+    printf("Enter block numbers:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &indexBlock[i]);
+    }
+
+    printf("Enter data for each block:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &data[i]);
+    }
+
+    printf("\nIndexed File Allocation:\n");
+    printf("Index Block\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Index %d -> Block %d -> Data %d\n",
+               i, indexBlock[i], data[i]);
+    }
+
+    printf("\nEnter index to access: ");
+    scanf("%d", &block);
+
+    if(block >= 0 && block < n)
+    {
+        printf("Index %d points to Block %d\n",
+               block, indexBlock[block]);
+
+        printf("Data = %d\n", data[block]);
+    }
+    else
+    {
+        printf("Invalid index.\n");
+    }
+
+    return 0;
+}
