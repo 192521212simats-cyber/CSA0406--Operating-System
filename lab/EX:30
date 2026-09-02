@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <pthread.h>
+
+void *display(void *arg)
+{
+    printf("Thread created successfully.\n");
+    return NULL;
+}
+
+int main()
+{
+    pthread_t thread;
+
+    pthread_create(&thread, NULL, display, NULL);
+
+    pthread_join(thread, NULL);
+
+    return 0;
+}
+(2) . thread join
+#include <stdio.h>
+#include <pthread.h>
+
+void *display(void *arg)
+{
+    printf("Thread is running...\n");
+    return NULL;
+}
+
+int main()
+{
+    pthread_t thread;
+
+    pthread_create(&thread, NULL, display, NULL);
+
+    pthread_join(thread, NULL);
+
+    printf("Thread completed.\n");
+
+    return 0;
+}
+(3).thread equal 
+#include <stdio.h>
+#include <pthread.h>
+
+void *display(void *arg)
+{
+    pthread_t self = pthread_self();
+
+    if(pthread_equal(self, *(pthread_t *)arg))
+        printf("Thread IDs are equal.\n");
+    else
+        printf("Thread IDs are not equal.\n");
+
+    return NULL;
+}
+
+int main()
+{
+    pthread_t thread;
+
+    pthread_create(&thread, NULL, display, &thread);
+
+    pthread_join(thread, NULL);
+
+    return 0;
+}
