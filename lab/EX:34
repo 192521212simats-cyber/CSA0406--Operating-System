@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    int block[50];
+    int n, i, record;
+
+    printf("Enter number of records: ");
+    scanf("%d", &n);
+
+    printf("Enter record data:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &block[i]);
+    }
+
+    printf("\nSequential File Allocation:\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Record %d -> Block %d -> Data %d\n",
+               i + 1, i + 1, block[i]);
+    }
+
+    printf("\nEnter record number to access: ");
+    scanf("%d", &record);
+
+    if(record >= 1 && record <= n)
+    {
+        printf("\nTo access Record %d, previous records are read first.\n",
+               record);
+
+        for(i = 0; i < record; i++)
+        {
+            printf("Reading Record %d: %d\n",
+                   i + 1, block[i]);
+        }
+    }
+    else
+    {
+        printf("Invalid record number.\n");
+    }
+
+    return 0;
+}
